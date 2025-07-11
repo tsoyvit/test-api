@@ -7,16 +7,6 @@ use App\Validators\StockValidator;
 
 class StockService extends AbstractSyncService
 {
-    protected array $uniqueBy = ['g_number'];
-    protected array $upsertFields = [
-        'date', 'last_change_date', 'supplier_article',
-        'tech_size', 'barcode', 'quantity', 'is_supply',
-        'is_realization', 'quantity_full', 'warehouse_name',
-        'in_way_to_client', 'in_way_from_client',
-        'nm_id', 'subject', 'category', 'brand',
-        'sc_code', 'price', 'discount',
-    ];
-
     public function __construct(StockRepositoryInterface $repository, StockValidator $validator)
     {
         parent::__construct($repository, $validator);

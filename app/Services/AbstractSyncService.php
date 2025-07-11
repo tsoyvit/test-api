@@ -11,8 +11,6 @@ abstract class AbstractSyncService
 {
     protected BaseRepositoryInterface $repository;
     protected ApiValidatorInterface $validator;
-    protected array $upsertFields;
-    protected array $uniqueBy;
     protected string $defaultDateFrom = '2025-01-01';
     protected string $defaultDateTo;
 
@@ -61,7 +59,7 @@ abstract class AbstractSyncService
         }
 
         if (!empty($validItems)) {
-            $this->repository->upsert($validItems, $this->uniqueBy, $this->upsertFields);
+            $this->repository->insert($validItems);
         }
     }
 

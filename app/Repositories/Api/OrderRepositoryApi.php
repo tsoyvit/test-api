@@ -9,8 +9,8 @@ class OrderRepositoryApi extends BaseRepositoryApi implements OrderRepositoryInt
 {
     protected string $endpoint = '/api/orders';
 
-    public function upsert(array $items, array $uniqueBy, array $upsertFields): void
+    public function insert(array $items): void
     {
-        Order::upsert($items, $uniqueBy, $upsertFields);
+        Order::insert($items);
     }
 }

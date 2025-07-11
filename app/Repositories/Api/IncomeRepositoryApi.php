@@ -9,8 +9,8 @@ class IncomeRepositoryApi extends BaseRepositoryApi implements IncomeRepositoryI
 {
     protected string $endpoint = '/api/incomes';
 
-    public function upsert(array $items, array $uniqueBy, array $upsertFields): void
+    public function insert(array $items): void
     {
-        Income::upsert($items, $uniqueBy, $upsertFields);
+        Income::insert($items);
     }
 }

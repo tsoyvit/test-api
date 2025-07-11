@@ -9,8 +9,8 @@ class StockRepositoryApi extends BaseRepositoryApi implements StockRepositoryInt
 {
     protected string $endpoint = '/api/stocks';
 
-    public function upsert(array $items, array $uniqueBy, array $upsertFields): void
+    public function insert(array $items): void
     {
-        Stock::upsert($items, $uniqueBy, $upsertFields);
+        Stock::insert($items);
     }
 }

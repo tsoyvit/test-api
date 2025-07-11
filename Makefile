@@ -12,3 +12,8 @@ sync:
 	php artisan sync:orders
 	php artisan sync:sales
 	php artisan sync:stocks
+setup:
+	composer install
+	cp .env.example .env
+	php artisan key:generate
+	touch database/database.sqlite

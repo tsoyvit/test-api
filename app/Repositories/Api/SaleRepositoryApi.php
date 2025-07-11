@@ -9,8 +9,8 @@ class SaleRepositoryApi extends BaseRepositoryApi implements SaleRepositoryInter
 {
     protected string $endpoint = '/api/sales';
 
-    public function upsert(array $items, array $uniqueBy, array $upsertFields): void
+    public function insert(array $items): void
     {
-        Sale::upsert($items, $uniqueBy, $upsertFields);
+        Sale::insert($items);
     }
 }
